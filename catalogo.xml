@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOGO>
+	<MUSICA>
+		<TITULO>Dance across the floor</TITULO>
+		<ANO>1976</ANO>
+		<ARTISTA>One way</ARTISTA>
+		<PAIS>USA</PAIS>
+		<GRAVADORA>ABC</GRAVADORA>
+		<PRECO>$40,00<PRECO>
+	</MUSICA>
+	
+	<MUSICA>
+		<TITULO>You get me hot</TITULO>
+		<ANO>1979</ANO>
+		<ARTISTA>Jimmi Bo Horne</ARTISTA>
+		<PAIS>USA</PAIS>
+		<GRAVADORA>Topgran</GRAVADORA>
+		<PRECO>$28,41</PRECO>
+	</MUSICA>
+	
+	<MUSICA>
+		<TITULO>Celebration</TITULO>
+		<ANO>1980</ANO>
+		<ARTISTA>Kool &amp; the Gang</ARTISTA>
+		<PAIS>USA</PAIS>
+		<GRAVADORA>Rhino</GRAVADORA>
+		<PRECO>$28,20</PRECO>
+	</MUSICA>
+</CATALOGO>

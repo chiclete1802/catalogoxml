@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Catalogo de Músicas</title>
+</head>
+<body>
+
+<h1>Apresentando o catalogo com XML</h1>
+
+<script>
+	if (window.XMLHttpRequest) {
+		xmlhttp = new XMLHttpRequest ();
+		} else {
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP") ;
+		}
+		xmlhttp.open("GET", "catalogo.xml", false) ;
+		xmlhttp.send() ;
+		xmlDoc = xmlhttp.responseXML;
+		document.write("<table border='1'>") ;
+		let x = xmlDoc.getElementsByTagName ("MUSICA") ;
+		for (let i = 0; i < x.lenght; i++)
+		{
+		document.write("<tr><td>");
+		
+		document.write("Título: " + x[i].getElementsByTagName("TITULO")[0].childNodes[0].nodeValue) ;
+		document.write("</br>") ;
+			
+			document.write("Ano: " + x[i].getElementsByTagName("ANO")[0].childNodes[0].nodeValue) ;
+			document.write("</br>") ;
+			
+			document.write("Artista: " + x[i].getElementsByTagName("ARTISTA")[0].childNodes[0].nodeValue) ;
+			document.write("</br>") ;
+			
+			document.write("País: " + x[i].getElementsByTagName("PAIS")[0].childNodes[0].nodeValue) ;
+			document.write("</br>") ;
+			
+			document.write("Gravadora: " + x[i].getElementsByTagName("GRAVADORA")[0].childNodes[0].nodeValue) ;
+			document.write("</br>") ;
+			
+			document.write("Preço: " + x[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue) ;
+			
+			document.write("</td></tr>") ;
+		}
+		
+		document.write("</table>") ;
+</script>
+</body>
+</html>
