@@ -9,41 +9,40 @@
 <h1>Apresentando o catalogo com XML</h1>
 
 <script>
-	function catalogo(xml){
+	function catalogomusica(xml){
 		let xmlDoc = xml.responseXML;
 		let musica = xmlDoc.getElementsByTagName("MUSICA");
 		document.write("<table>");
 		for (let i = 0; i < musica.length; i++){
-		document.write("<tr><td>");
-		
-		document.write("Título: " + musica[i].getElementsByTagName("TITULO")[0].childNodes[0].nodeValue) ;
-		document.write("</br>") ;
-			
-			document.write("Ano: " + musica[i].getElementsByTagName("ANO")[0].childNodes[0].nodeValue) ;
-			document.write("</br>") ;
-			
-			document.write("Artista: " + musica[i].getElementsByTagName("ARTISTA")[0].childNodes[0].nodeValue) ;
-			document.write("</br>") ;
-			
-			document.write("País: " + musica[i].getElementsByTagName("PAIS")[0].childNodes[0].nodeValue) ;
-			document.write("</br>") ;
-			
-			document.write("Gravadora: " + musica[i].getElementsByTagName("GRAVADORA")[0].childNodes[0].nodeValue) ;
-			document.write("</br>") ;
-			
-			document.write("Preço: " + musica[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue) ;
-			
-			document.write("</td></tr>") ;
-		}
-		document.write("</table>") ;
-		}
-		let xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+			document.write("<tr><td>")
+			document.write("Titulo: " + musica[i].getElementsByTagName("TITULO")[0].childNodes[0].nodeValue);
+			document.write("</br>");
 
-		xmlhttp.onreadystatechange = function(){
-		if (this.readyState == 4 && this.status == 200){
-		catalogomusica(this);
+			document.write("Ano: " + musica[i].getElementsByTagName("ANO")[0].childNodes[0].nodeValue);
+			document.write("</br>");
+
+			document.write("Artista: " + musica[i].getElementsByTagName("ARTISTA")[0].childNodes[0].nodeValue);
+			document.write("</br>");
+
+			document.write("Pais: " + musica[i].getElementsByTagName("PAIS")[0].childNodes[0].nodeValue);
+			document.write("</br>");
+
+			document.write("Gravadora: " + musica[i].getElementsByTagName("GRAVADORA")[0].childNodes[0].nodeValue);
+			document.write("</br>");
+
+			document.write("Preço: " + musica[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue);
+				
+			document.write("</td></tr>")
+			}
+		document.write("<table>")
 		}
-	};
+	
+		let xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+		xmlhttp.onreadystatechange = function(){
+			if (this.readyState == 4 && this.status == 200){
+				catalogomusica(this);
+			}
+		};
 xmlhttp.open("GET", "./catalogo.xml", false);
 xmlhttp.send();
 </script>
