@@ -9,37 +9,43 @@
 <h1>Apresentando o catalogo com XML</h1>
 
 <script>
-		xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", "catalogo.xml", true) ;
-		xmlhttp.send() ;
-		xmlDoc = xmlhttp.responseXML;
-		document.write("<table border='1'>") ;
-		let x = xmlDoc.getElementsByTagName ("MUSICA") ;
-		for (let i = 0; i < x.lenght; i++)
-		{
+	function catalogo(xml){
+		let xmlDoc = xml.responseXML;
+		let musica = xmlDoc.getElementsByTagName("MUSICA");
+		document.write("<table>");
+		for (let i = 0; i < musica.length; i++){
 		document.write("<tr><td>");
 		
-		document.write("Título: " + x[i].getElementsByTagName("TITULO")[0].childNodes[0].nodeValue) ;
+		document.write("Título: " + musica[i].getElementsByTagName("TITULO")[0].childNodes[0].nodeValue) ;
 		document.write("</br>") ;
 			
-			document.write("Ano: " + x[i].getElementsByTagName("ANO")[0].childNodes[0].nodeValue) ;
+			document.write("Ano: " + musica[i].getElementsByTagName("ANO")[0].childNodes[0].nodeValue) ;
 			document.write("</br>") ;
 			
-			document.write("Artista: " + x[i].getElementsByTagName("ARTISTA")[0].childNodes[0].nodeValue) ;
+			document.write("Artista: " + musica[i].getElementsByTagName("ARTISTA")[0].childNodes[0].nodeValue) ;
 			document.write("</br>") ;
 			
-			document.write("País: " + x[i].getElementsByTagName("PAIS")[0].childNodes[0].nodeValue) ;
+			document.write("País: " + musica[i].getElementsByTagName("PAIS")[0].childNodes[0].nodeValue) ;
 			document.write("</br>") ;
 			
-			document.write("Gravadora: " + x[i].getElementsByTagName("GRAVADORA")[0].childNodes[0].nodeValue) ;
+			document.write("Gravadora: " + musica[i].getElementsByTagName("GRAVADORA")[0].childNodes[0].nodeValue) ;
 			document.write("</br>") ;
 			
-			document.write("Preço: " + x[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue) ;
+			document.write("Preço: " + musica[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue) ;
 			
 			document.write("</td></tr>") ;
 		}
-		
 		document.write("</table>") ;
+		}
+		let xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+		xmlhttp.onreadystatechange = function(){
+		if (this.readyState == 4 && this.status == 200){
+		catalogomusica(this);
+		}
+	};
+xmlhttp.open("GET", "./catalogo.xml", false);
+xmlhttp.send();
 </script>
 </body>
 </html>
