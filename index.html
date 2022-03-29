@@ -9,12 +9,7 @@
 <h1>Apresentando o catalogo com XML</h1>
 
 <script>
-	if (window.XMLHttpRequest) {
 		xmlhttp = new XMLHttpRequest();
-		} 
-		else {
-		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP") ;
-		}
 		xmlhttp.open("GET", "catalogo.xml", true) ;
 		xmlhttp.send() ;
 		xmlDoc = xmlhttp.responseXML;
