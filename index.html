@@ -10,11 +10,12 @@
 
 <script>
 	if (window.XMLHttpRequest) {
-		xmlhttp = new XMLHttpRequest ();
-		} else {
-			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP") ;
+		xmlhttp = new XMLHttpRequest();
+		} 
+		else {
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP") ;
 		}
-		xmlhttp.open("GET", "catalogo.xml", false) ;
+		xmlhttp.open("GET", "catalogo.xml", true) ;
 		xmlhttp.send() ;
 		xmlDoc = xmlhttp.responseXML;
 		document.write("<table border='1'>") ;
